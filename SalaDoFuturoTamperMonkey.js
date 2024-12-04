@@ -13,8 +13,10 @@
     'use strict';
     const novaImagem1 = "https://cdn.discordapp.com/attachments/1312515287911895062/1313500661345947698/imagem_2024-12-03_104102205-removebg-preview.png?ex=67505c51&is=674f0ad1&hm=bd9dd1463faa4ebefbc1dcb11af3154fadeec47755025494a9629fa0538f785f";
     const novaImagem2 = "https://cdn.discordapp.com/attachments/1312515287911895062/1313500661345947698/imagem_2024-12-03_104102205-removebg-preview.png?ex=67505c51&is=674f0ad1&hm=bd9dd1463faa4ebefbc1dcb11af3154fadeec47755025494a9629fa0538f785f";
+    const novaImagem3 = "https://cdn.discordapp.com/attachments/1312515287911895062/1313500661345947698/imagem_2024-12-03_104102205-removebg-preview.png?ex=67505c51&is=674f0ad1&hm=bd9dd1463faa4ebefbc1dcb11af3154fadeec47755025494a9629fa0538f785f";
     const seletorImagem1 = "#root > div.MuiBox-root.css-z0hhne > div.MuiDrawer-root.MuiDrawer-docked.css-em35d7 > div > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div > div.MuiBox-root.css-1j0h67t > img";
     const seletorImagem2 = "#root > div.MuiBox-root.css-z0hhne > div.MuiBox-root.css-a60g7b > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-1.css-o37zhb > div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.MuiGrid-grid-lg-3.css-ja4s3e > img";
+    const seletorImagem3 = "#root > div.MuiBox-root.css-z0hhne > div.MuiBox-root.css-a60g7b > div > div.simplebar-wrapper > div.simplebar-mask > div > div > div > div.css-gsuwte > div > div > div.css-gsuwte > div > div.MuiGrid-root.MuiGrid-container.css-1d3bbye > div.MuiGrid-root.MuiGrid-container.MuiGrid-item.MuiGrid-spacing-xs-1.MuiGrid-grid-xs-12.css-1k7k5az > div:nth-child(1)"
     function alterarImagem(seletor, novaSrc) {
         const imagem = document.querySelector(seletor);
         if (imagem) {
@@ -24,6 +26,7 @@
     function substituirImagens() {
         alterarImagem(seletorImagem1, novaImagem1);
         alterarImagem(seletorImagem2, novaImagem2);
+        alterarImagem(seletorImagem3, novaImagem3);
     }
     const observer = new MutationObserver(() => {
         substituirImagens();
@@ -225,7 +228,7 @@
 
 console.log("Oneko cat loaded by marcos10pc")
 
-function mostrarNotificacaoHumanizada() {
+function mostrarNotificacao() {
     if (document.querySelector("#notificacao-custom")) return;
     const notificacao = document.createElement("div");
     notificacao.id = "notificacao-custom";
@@ -293,4 +296,4 @@ function mostrarNotificacaoHumanizada() {
     notificacao.appendChild(botao);
     document.body.appendChild(notificacao);
 }
-mostrarNotificacaoHumanizada();
+mostrarNotificacao();
