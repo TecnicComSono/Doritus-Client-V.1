@@ -224,3 +224,73 @@
 })();
 
 console.log("Oneko cat loaded by marcos10pc")
+
+function mostrarNotificacaoHumanizada() {
+    if (document.querySelector("#notificacao-custom")) return;
+    const notificacao = document.createElement("div");
+    notificacao.id = "notificacao-custom";
+    notificacao.style.position = "fixed";
+    notificacao.style.top = "50%";
+    notificacao.style.left = "50%";
+    notificacao.style.transform = "translate(-50%, -50%)";
+    notificacao.style.backgroundColor = "white";
+    notificacao.style.color = "#333";
+    notificacao.style.padding = "20px 30px";
+    notificacao.style.boxShadow = "0 10px 20px rgba(0, 0, 0, 0.2)";
+    notificacao.style.borderRadius = "12px";
+    notificacao.style.textAlign = "center";
+    notificacao.style.zIndex = "999999";
+    notificacao.style.fontFamily = "'Arial', sans-serif";
+    notificacao.style.maxWidth = "400px";
+    notificacao.style.width = "90%";
+    notificacao.style.border = "1px solid white";
+
+
+    // Adiciona o botão de fechar
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "×";
+    closeButton.style.position = "absolute";
+    closeButton.style.top = "10px";
+    closeButton.style.right = "10px";
+    closeButton.style.background = "none";
+    closeButton.style.border = "none";
+    closeButton.style.color = "#999";
+    closeButton.style.fontSize = "18px";
+    closeButton.style.cursor = "pointer";
+    closeButton.style.transition = "color 0.3s ease";
+    closeButton.addEventListener("mouseenter", () => (closeButton.style.color = "#333"));
+    closeButton.addEventListener("mouseleave", () => (closeButton.style.color = "#999"));
+    closeButton.addEventListener("click", () => notificacao.remove());
+    const titulo = document.createElement("h2");
+    titulo.textContent = "Entre na Platform Destroyer";
+    titulo.style.marginBottom = "10px";
+    titulo.style.color = "white";
+    titulo.style.fontSize = "20px";
+    const texto = document.createElement("p");
+    texto.innerHTML =
+        'Você gosta de nossos scripts? Então entre agora para a <a href="https://discord.gg/platformdestroyer" target="_blank" style="color: #8800d1; text-decoration: none; font-weight: bold;">Platform Destroyer</a>!';
+    texto.style.fontSize = "16px";
+    texto.style.lineHeight = "1.6";
+    const botao = document.createElement("button");
+    botao.textContent = "Entrar Agora";
+    botao.style.backgroundColor = "white";
+    botao.style.color = "black";
+    botao.style.border = "none";
+    botao.style.padding = "10px 20px";
+    botao.style.borderRadius = "8px";
+    botao.style.cursor = "pointer";
+    botao.style.marginTop = "15px";
+    botao.style.fontSize = "16px";
+    botao.style.transition = "background-color 0.3s ease";
+    botao.style.border = "1px solid white";
+    botao.addEventListener("click", () => {
+        window.open("https://discord.gg/platformdestroyer", "_blank");
+        notificacao.remove();
+    });
+    notificacao.appendChild(closeButton);
+    notificacao.appendChild(titulo);
+    notificacao.appendChild(texto);
+    notificacao.appendChild(botao);
+    document.body.appendChild(notificacao);
+}
+mostrarNotificacaoHumanizada();
